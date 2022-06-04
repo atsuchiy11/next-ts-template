@@ -1,0 +1,12 @@
+# next
+next.config.js
+.next
+
+# .d.ts
+*.d.ts
+
+# test
+*.spec.*
+test/**/*
+
+.eslintrc.js

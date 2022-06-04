@@ -6,19 +6,42 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint --ext .ts,.tsx --ignore-path .eslintignore . && yarn type-check",
+    "lintfix": "eslint --fix --ext .ts,.tsx --ignore-path .eslintignore .",
+    "type-check": "tsc --pretty --noEmit --project tsconfig.json"
   },
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged --allow-empty",
+			"pre-push": "yarn run type-check"
+		}
+	},
+	"lint-staged": {
+		"*.@(ts|tsx)": ["yarn lintfix"]
+	},  
   "dependencies": {
     "next": "12.1.6",
-    "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
     "@types/node": "17.0.39",
     "@types/react": "18.0.10",
     "@types/react-dom": "18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.0",
+    "prettier": "^2.6.2",
+    "ts-node": "^10.8.1",
+    "tsconfig-paths": "^4.0.0",
     "typescript": "4.7.3"
   }
 }
