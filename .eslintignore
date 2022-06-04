@@ -1,5 +1,4 @@
 # next
-next.config.js
 .next
 
 # .d.ts
@@ -9,4 +8,6 @@ next.config.js
 *.spec.*
 test/**/*
 
+# config
 .eslintrc.js
+*.config.js
