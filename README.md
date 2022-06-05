@@ -244,6 +244,7 @@ ESLintのルールに追加する方針で設定する
   ```
 
 - React Testing Library@13.xは>=React17なのでダウングレード（`v12.1.2`）
+- `userEvent`は`v13.x` or `v14.x`
 
   ```zsh
   % yarn add --dev @testing-library/react @testing-library/jest-dom @testing-library/user-event
