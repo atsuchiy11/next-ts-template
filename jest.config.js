@@ -8,7 +8,7 @@ const customConfig = {
     '<rootDir>/node_modules',
     "<rootDir>/e2e/"
   ],
-  testMatch: ["<rootDir>/**/*.spec.ts"],
+  testMatch: ["<rootDir>/**/*.spec.+(ts|tsx)"],
   moduleDirectories: ["node_modules", "<rootDir>/"],
   moduleNameMapper: {
     "~/(.*)$": "<rootDir>/$1",

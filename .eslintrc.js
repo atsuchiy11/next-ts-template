@@ -37,6 +37,9 @@ module.exports = {
         }],
         // reactのカスタムルール
         "react/prop-types": "off", // TSなので不要
-        "react/react-in-jsx-scope": "off" // v17からReactはグローバル
+        "react/react-in-jsx-scope": "off", // v17からReactはグローバル
+        // その他
+        "@typescript-eslint/no-this-alias": "off",
+        "@typescript-eslint/no-explicit-any": "off"
     }
 };
