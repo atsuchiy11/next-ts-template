@@ -13,15 +13,15 @@ Vue.jsと比べて自分で機能の拡張と追加が必要なため、汎用�
 | リンター             | ESLint                 |
 | フォーマッター       | Prettier               |
 | モックサーバ         | Restify                |
-|                      | Mock Service Worker    |
 | テストフレームワーク | Jest                   |
 |                      | React Testing Library  |
+|                      | Mock Service Worker    |
 | タスクランナー       | husky                  |
 |                      | lint-staged            |
 | UIライブラリ         | MUI（旧：Material UI） |
 |                      | Tailwind CSS + daisyUI |
 | UIカタログ           | Storybook              |
-|                      | scaffdog               |
+|                      | Figma              |
 | E2Eテスト            | Cypress                |
 |                      | Playwright             |
 
@@ -285,4 +285,37 @@ ESLintのルールに追加する方針で設定する
   module.exports = createJestConfig(customConfig)
   ```
 
-  
+## MSW（Mock Service Workers）
+
+- APIリクエストをインターセプトしてモックデータを返す
+- 外部APIを叩かなければ不要かもしれない
+
+## restify
+
+APIのモックサーバとして利用する
+
+- インストール
+
+  ```zsh
+  % yarn add --dev restify @types/restify
+  % yarn add --dev restify-cors-middleware @types/restify-cors-middleware
+  ```
+
+- グローバルから.tsスクリプトを実行するためのbabel設定
+  - `.babelrc`
+    ```json
+    {
+      "presets": ["next/babel"],
+      "plugins": []
+    }
+    ```
+  - `next/babel` | React/TypeScriptコンパイルに必要な諸々が同梱されている
+    - preset-env
+    - preset-react
+    - preset-typescript
+    - plugin-proposal-class-properties
+    - plugin-proposal-object-rest-spread
+    - plugin-transform-runtime
+    - styled-jsx
+
+

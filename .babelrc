@@ -1,0 +1,15 @@
+// next/babelプリセットにNext.js/Reactのコンパイルに必要な
+// 諸々が含まれているので深く触らない（zero-config）
+// [参考]プリセットの中身
+// preset-env
+// preset-react
+// preset-typescript
+// plugin-proposal-class-properties
+// plugin-proposal-object-rest-spread
+// plugin-transform-runtime
+// styled-jsx
+
+{
+  "presets": ["next/babel"],
+  "plugins": []
+}
